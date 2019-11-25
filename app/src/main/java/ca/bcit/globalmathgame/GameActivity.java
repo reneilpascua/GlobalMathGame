@@ -1,11 +1,15 @@
 package ca.bcit.globalmathgame;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.NotificationCompat;
+import androidx.core.app.NotificationManagerCompat;
 
 import android.app.Notification;
+import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -24,7 +28,9 @@ public class GameActivity extends AppCompatActivity {
     private Button btn_skip;
     private boolean finished=false;
 
-    private NotificationManager nm;
+    public static final String CHANNEL_1_ID = "channel1";
+
+    private NotificationManagerCompat nmc;
 
     Random r = new Random();
     private MathQuestion[] questions;
@@ -38,7 +44,8 @@ public class GameActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
 
-        nm = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+        createNotificationChannels();
+        nmc = NotificationManagerCompat.from(this);
 
         qNum =0;
         curScore=0;
@@ -154,24 +161,36 @@ public class GameActivity extends AppCompatActivity {
         finished=true;
 
         // notification
-        makeNotification();
+        makeNotification(curScore);
     }
 
-    private void makeNotification() {
-        Intent intent = new Intent(this, GameActivity.class);
-// use System.currentTimeMillis() to have a unique ID for the pending intent
-        PendingIntent pIntent = PendingIntent.getActivity(this, (int) System.currentTimeMillis(), intent, 0);
+    private void createNotificationChannels() {
+        if (Build.VERSION.SDK_INT>=Build.VERSION_CODES.O) {
+            NotificationChannel channel1 = new NotificationChannel(
+                    CHANNEL_1_ID,
+                    "Channel 1",
+                    NotificationManager.IMPORTANCE_HIGH
+            );
+            channel1.setDescription("to show your score");
 
-// build notification
-// the addAction re-use the same intent to keep the example short
-        Notification n  = new Notification.Builder(this)
-                .setContentTitle("New mail from " + "test@gmail.com")
-                .setContentText("Subject")
+            NotificationManager nm = getSystemService(NotificationManager.class);
+            nm.createNotificationChannel(channel1);
+        }
+    }
+
+    private void makeNotification(int curScore) {
+        String appname = getResources().getString(R.string.app_name);
+        String scorelabel = getResources().getString(R.string.yourScoreIs);
+        Notification n = new NotificationCompat.Builder(this, CHANNEL_1_ID)
                 .setSmallIcon(R.drawable.ic_launcher_background)
-                .setContentIntent(pIntent)
-                .setAutoCancel(true).build();
+                .setContentTitle(appname)
+                .setContentText(scorelabel+" "+curScore+" / "+NUMQUESTIONS)
+                .setPriority(NotificationCompat.PRIORITY_HIGH)
+                .setCategory(NotificationCompat.CATEGORY_MESSAGE)
+                .build();
 
-
-        nm.notify(0, n);
+        nmc.notify(1,n);
     }
+
+
 }
