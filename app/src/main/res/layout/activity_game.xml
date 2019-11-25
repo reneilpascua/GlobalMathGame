@@ -71,14 +71,18 @@
 
         <Button
             android:id="@+id/btn_skip"
+            android:text="@string/skip"
             android:layout_width="0px"
             android:layout_height="wrap_content"
-            android:layout_weight="1"/>
+            android:layout_weight="1"
+            android:onClick="skipQuestion"/>
         <Button
-            android:id="@+id/btn_rest"
+            android:id="@+id/btn_reset"
+            android:text="@string/reset"
             android:layout_width="0px"
             android:layout_height="wrap_content"
-            android:layout_weight="1"/>
+            android:layout_weight="1"
+            android:onClick="resetQuiz"/>
 
     </LinearLayout>
 
