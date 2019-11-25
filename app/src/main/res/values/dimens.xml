@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="screenPadding">5dp</dimen>
+    <dimen name="margin">10dp</dimen>
+    <dimen name="bigMargin">20dp</dimen>
+    <dimen name="bigPadding">15dp</dimen>
+</resources>

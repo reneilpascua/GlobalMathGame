@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Global Math Game</string>
+    <string name="startGame">start game</string>
+    <string name="questionLabel">Question:</string>
+    <string name="answersLabel">Choices:</string>
+    <string name="correct">Correct!</string>
+    <string name="wrong">Wrong!</string>
+</resources>
