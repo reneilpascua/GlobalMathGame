@@ -6,9 +6,9 @@
     <string name="correct">Correct!</string>
     <string name="wrong">Wrong!</string>
     <string name="skip">skip</string>
-    <string name="rest">rest</string>
+    <string name="rest" translatable="false">rest</string>
     <string name="reset">reset</string>
-    <string name="channel_name">channelName</string>
-    <string name="channel_description">channelDescription</string>
+    <string name="channel_name" translatable="false">channelName</string>
+    <string name="channel_description" translatable="false">channelDescription</string>
     <string name="yourScoreIs">Your score is</string>
 </resources>

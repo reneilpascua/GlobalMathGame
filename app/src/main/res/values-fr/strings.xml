@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Jeu Mathématique Global</string>
+    <string name="answersLabel">Les Choix:</string>
+    <string name="correct">Bonne Réponse</string>
+    <string name="wrong">Réponse Incorrecte!</string>
+    <string name="yourScoreIs">Votre score est</string>
+    <string name="startGame">démarrer jeu</string>
+    <string name="skip">sauter</string>
+    <string name="reset">réinstaller</string>
+    <string name="questionLabel">Question</string>
+</resources>
