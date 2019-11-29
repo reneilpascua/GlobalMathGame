@@ -135,7 +135,10 @@ public class GameActivity extends AppCompatActivity {
         if (qNum<NUMQUESTIONS-1) {
             nextQuestion();
         } else {
-            finishGame();
+            if (!finished) {
+                finishGame();
+            }
+
         }
     }
 
