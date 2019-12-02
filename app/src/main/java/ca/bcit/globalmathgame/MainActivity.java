@@ -19,6 +19,12 @@ public class MainActivity extends AppCompatActivity {
         startActivity(i);
 
     }
-    
+
+    public void startKotlinGame(View view) {
+        Intent i = new Intent(MainActivity.this, KotlinGameActivity.class);
+        startActivity(i);
+
+    }
+
 
 }
