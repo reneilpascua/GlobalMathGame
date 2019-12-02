@@ -9,4 +9,6 @@
     <string name="startGame">empezar juego</string>
     <string name="wrong">Incorrecta</string>
     <string name="yourScoreIs">Tu puntaje es</string>
+    <string name="startJavaGame">empezar juego JAVA</string>
+    <string name="startKotlinGame">empezar juego KOTLIN</string>
 </resources>

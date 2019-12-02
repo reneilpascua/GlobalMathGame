@@ -11,4 +11,6 @@
     <string name="channel_name" translatable="false">channelName</string>
     <string name="channel_description" translatable="false">channelDescription</string>
     <string name="yourScoreIs">Your score is</string>
+    <string name="startJavaGame">start java game</string>
+    <string name="startKotlinGame">start kotlin game</string>
 </resources>

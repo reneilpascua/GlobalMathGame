@@ -9,4 +9,6 @@
     <string name="skip">sauter</string>
     <string name="reset">réinstaller</string>
     <string name="questionLabel">Question</string>
+    <string name="startJavaGame">démarrer jeu JAVA</string>
+    <string name="startKotlinGame">démarrer jeu KOTLIN</string>
 </resources>
